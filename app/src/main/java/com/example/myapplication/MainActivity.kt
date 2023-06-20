@@ -14,22 +14,13 @@ import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
-    private lateinit var manager: FragmentManager
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d("vaibhav", "onCreateChild")
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnDisplaySnackbar.setOnClickListener {
-            displaySnackbar()
-        }
-        binding.btnDisplayDialog.setOnClickListener {
-            displayDialog()
-        }
-        binding.btnNext.setOnClickListener {
-            val listFragment = ListFragment.newInstance()
-            supportFragmentManager.beginTransaction().add(R.id.container_layout, listFragment, "listFragment").commit()
-        }
+        val listFragment = ListFragment.newInstance()
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment, "listFragment").commit()
     }
 
     override fun onPause() {
@@ -48,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displaySnackbar() {
-        Snackbar.make(binding.containerLayout, "Live freely", Snackbar.LENGTH_INDEFINITE)
+        Snackbar.make(binding.fragmentContainer, "Live freely", Snackbar.LENGTH_INDEFINITE)
             .setAction("op"){}
             .show()
     }

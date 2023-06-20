@@ -22,4 +22,11 @@ class ListFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_list, container, false)
     }
+
+    override fun onResume() {
+        super.onResume()
+        val listFragment2 = ListFragment2.newInstance()
+        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, listFragment2, "listFragment")?.commit()
+    }
+
 }
