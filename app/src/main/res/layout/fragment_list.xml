@@ -7,7 +7,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/rv_list_students"
+        android:visibility="gone"
+        android:id="@+id/rv_list_countries"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <GridView
+        android:id="@+id/gv_list_students"
+        android:layout_width="match_parent"
+        android:numColumns="3"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
