@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val listFragment = ListFragment.newInstance()
+        val listFragment = CountryListFragment.newInstance()
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment, "listFragment").commit()
     }
 
