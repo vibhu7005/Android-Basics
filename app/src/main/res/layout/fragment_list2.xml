@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="hello2"
-        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+      <WebView
+          android:id="@+id/webView"
+          android:backgroundTint="@color/black"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_x="189dp"
+          android:layout_y="204dp" />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+

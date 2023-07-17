@@ -1,12 +1,15 @@
 package com.example.myapplication.view
 
 import android.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.OnBackPressedDispatcher
+import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -17,7 +20,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val listFragment = CountryListFragment.newInstance()
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment, "listFragment").commit()
+       // val onBackPressedDispatcher = onBackPressedDispatcher
+
+        // Add a callback to the dispatcher
+
+        // Add a callback to the dispatcher
+        val onBackPressedDispatcher: OnBackPressedDispatcher = onBackPressedDispatcher
     }
+
 
     override fun onPause() {
         Log.d("vaibhav", "onPauseChild")

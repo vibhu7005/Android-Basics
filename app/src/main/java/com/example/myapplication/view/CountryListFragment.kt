@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentListBinding
 import com.example.myapplication.view.adapter.CountryListAdapter
-import com.example.myapplication.view.adapter.CountryListGridAdapter
 
 class CountryListFragment : Fragment() {
     lateinit var binding: FragmentListBinding
@@ -40,7 +40,7 @@ class CountryListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val listFragment2 = ListFragment2.newInstance()
+        val listFragment2 = WebViewFragment.newInstance()
+        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment2, "Frag2").commit()
     }
-
 }
