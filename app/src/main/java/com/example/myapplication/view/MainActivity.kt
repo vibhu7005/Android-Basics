@@ -1,6 +1,7 @@
 package com.example.myapplication.view
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.OnBackPressedCallback
@@ -19,13 +20,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val listFragment = CountryListFragment.newInstance()
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment, "listFragment").commit()
-       // val onBackPressedDispatcher = onBackPressedDispatcher
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment, "listFragment").addToBackStack("listFragment").commit()
+    }
 
-        // Add a callback to the dispatcher
-
-        // Add a callback to the dispatcher
-        val onBackPressedDispatcher: OnBackPressedDispatcher = onBackPressedDispatcher
+    override fun onResume() {
+        super.onResume()
+//        val intent = Intent(this, SecondActivity::class.java)
+//        startActivity(intent)
     }
 
 

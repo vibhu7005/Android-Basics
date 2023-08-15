@@ -1,6 +1,7 @@
 package com.example.myapplication.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import com.example.myapplication.view.adapter.CountryListAdapter
 
 class CountryListFragment : Fragment() {
     lateinit var binding: FragmentListBinding
+    lateinit var x : String
 
     companion object {
         fun newInstance() : CountryListFragment {
@@ -21,11 +23,17 @@ class CountryListFragment : Fragment() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        x = "sort"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        Log.d("vaibhav country fragment", "onCreateView")
         binding = FragmentListBinding.inflate(layoutInflater)
         return binding.root
     }
