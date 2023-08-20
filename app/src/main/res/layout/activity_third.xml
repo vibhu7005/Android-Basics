@@ -20,10 +20,20 @@
         android:id="@+id/btn_stop_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_service_start"
+        app:layout_constraintBottom_toBottomOf="@id/btn_notifications"
+        app:layout_constraintTop_toTopOf="@id/btn_service_start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="stop Service"/>
+
+    <Button
+        android:id="@+id/btn_notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_stop_service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Send Local Notification"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
