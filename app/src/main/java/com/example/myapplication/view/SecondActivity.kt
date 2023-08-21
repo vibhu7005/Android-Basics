@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
@@ -20,7 +19,7 @@ class SecondActivity : AppCompatActivity() {
         }
 
         activityBinding.btnNext.setOnClickListener {
-            val intent = Intent(this, ThirdActivity::class.java)
+            val intent = Intent(this, NotificationActivity::class.java)
             startActivity(intent)
         }
     }

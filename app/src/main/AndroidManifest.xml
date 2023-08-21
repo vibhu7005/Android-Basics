@@ -19,7 +19,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".view.ThirdActivity"
+            android:name=".view.NotificationActivity"
             android:exported="false" />
         <activity
             android:name=".view.SecondActivity"
@@ -35,6 +35,8 @@
         </activity>
         <service android:name=".view.Services.BackgroundService"/>
         <service android:name=".view.Services.ForegroundService"/>
+        <receiver android:name=".view.broadcastReceiver.JordieeBroadcastReceiver"
+            android:exported="true"/>
     </application>
 
 </manifest>

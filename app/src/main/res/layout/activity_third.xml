@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ThirdActivity">
+    tools:context=".view.NotificationActivity">
 
     <Button
         android:id="@+id/btn_service_start"
@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="start Service"/>
+        android:text="@string/start_service"/>
 
     <Button
         android:id="@+id/btn_stop_service"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="@id/btn_service_start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="stop Service"/>
+        android:text="@string/stop_service"/>
 
     <Button
         android:id="@+id/btn_notifications"
@@ -34,6 +34,16 @@
         app:layout_constraintTop_toTopOf="@id/btn_stop_service"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Send Local Notification"/>
+        android:text="@string/send_local_notification"/>
+
+    <Button
+        android:id="@+id/send_periodic_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_notifications"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/send_periodic_notification"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
