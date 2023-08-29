@@ -4,13 +4,17 @@ import android.Manifest
 import android.app.Activity
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.myapplication.R
+import com.example.myapplication.view.MainActivity
+import com.example.myapplication.view.broadcastReceiver.JordieeBroadcastReceiver
 
 class JordieeUtils {
     companion object {
@@ -19,10 +23,18 @@ class JordieeUtils {
         private const val NOTIFICATION_CHANNEL_NAME = "JordieeLocalNotifications"
          fun displayNotification(context : Context) {
             val builder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
+             val intent = Intent(context.applicationContext, MainActivity::class.java)
+             val actionIntent = Intent(context.applicationContext, JordieeBroadcastReceiver::class.java)
+
+             val actionPendingIntent = PendingIntent.getBroadcast(context, 1003, actionIntent, PendingIntent.FLAG_IMMUTABLE)
+             val pendingIntent = PendingIntent.getActivity(context, 1002, intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
                 builder.setSmallIcon(R.drawable.bell)
                     .setContentTitle("Jordiee's Notification")
                     .setContentText("Here is the notification")
+                    .setContentIntent(pendingIntent)
+                    .addAction(R.drawable.bell,"Click here", actionPendingIntent)
+                    .setAutoCancel(true)
                 val manager: NotificationManager =
                     context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 val channel = NotificationChannel(
@@ -34,8 +46,10 @@ class JordieeUtils {
             } else {
                 builder.setSmallIcon(R.drawable.bell)
                     .setContentTitle("Jordiee's Notification")
-                    .setContentText("Here is the notification").priority =
-                    NotificationManager.IMPORTANCE_HIGH
+                    .setContentText("Here is the notification")
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(true)
+                    .priority = NotificationManager.IMPORTANCE_HIGH
             }
             val notificationManagerCompat = NotificationManagerCompat.from(context)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && ActivityCompat.checkSelfPermission(

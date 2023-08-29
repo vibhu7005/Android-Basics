@@ -58,12 +58,6 @@ class NotificationActivity : AppCompatActivity() {
                 calender.set(Calendar.HOUR_OF_DAY, timePicker.hour)
                 calender.set(Calendar.MINUTE, timePicker.minute)
                 calender.set(Calendar.SECOND, 0)
-//                val timerIntent = Intent(this, JordieeBroadcastReceiver::class.java)
-//                timerIntent.action = "JordieeReminder"
-//                val pendingIntent = PendingIntent.getBroadcast(this, 1001,
-//                timerIntent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
-//                val alarmManager : AlarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-//                alarmManager.set(AlarmManager.RTC_WAKEUP, calender.timeInMillis, pendingIntent)
                 val timerIntent = Intent(this, JordieeBroadcastReceiver::class.java)
                 timerIntent.action = "JordieeReminder"
                 val pendingIntent = PendingIntent.getBroadcast(this, 1001, timerIntent, PendingIntent.FLAG_IMMUTABLE)
