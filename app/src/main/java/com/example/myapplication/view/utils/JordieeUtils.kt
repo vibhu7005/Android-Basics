@@ -25,6 +25,7 @@ class JordieeUtils {
             val builder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
              val intent = Intent(context.applicationContext, MainActivity::class.java)
              val actionIntent = Intent(context.applicationContext, JordieeBroadcastReceiver::class.java)
+             actionIntent.action = "NOTIFICATION_ACTION"
 
              val actionPendingIntent = PendingIntent.getBroadcast(context, 1003, actionIntent, PendingIntent.FLAG_IMMUTABLE)
              val pendingIntent = PendingIntent.getActivity(context, 1002, intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
@@ -33,7 +34,7 @@ class JordieeUtils {
                     .setContentTitle("Jordiee's Notification")
                     .setContentText("Here is the notification")
                     .setContentIntent(pendingIntent)
-                    .addAction(R.drawable.bell,"Click here", actionPendingIntent)
+                    .addAction(R.drawable.bell,"Dismiss", actionPendingIntent)
                     .setAutoCancel(true)
                 val manager: NotificationManager =
                     context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
