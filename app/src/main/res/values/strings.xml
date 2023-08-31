@@ -6,4 +6,5 @@
     <string name="send_local_notification">Send Local Notification</string>
     <string name="stop_service">stop Service</string>
     <string name="start_service">start Service</string>
+    <string name="next">Next</string>
 </resources>
