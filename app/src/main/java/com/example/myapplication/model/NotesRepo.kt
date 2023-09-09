@@ -21,8 +21,8 @@ class NotesRepo(private val notesDao : NotesDao) {
         notesDao.delete(note)
     }
 
-//    @WorkerThread
-//    suspend fun deleteAllNotes() {
-//        notesDao.deleteAllData()
-//    }
+    @WorkerThread
+    suspend fun deleteAllNotes() {
+        notesDao.deleteAllData()
+    }
 }

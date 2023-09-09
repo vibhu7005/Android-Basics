@@ -21,7 +21,7 @@ interface NotesDao {
     @Query("SELECT * FROM NOTE_TABLE ORDER BY id ASC")
     fun getAllNotes() : Flow<List<Note>>
 
-//    @Query("DELETE from NOTE_TABLE")
-//    suspend fun deleteAllData() : Int
+    @Query("DELETE from NOTE_TABLE")
+    suspend fun deleteAllData() : Int
 
 }
