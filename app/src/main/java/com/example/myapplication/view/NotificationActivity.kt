@@ -17,6 +17,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityThirdBinding
+import com.example.myapplication.view.notesapp.NotesActivity
 import com.example.myapplication.view.Services.ForegroundService
 import com.example.myapplication.view.broadcastReceiver.JordieeBroadcastReceiver
 import com.example.myapplication.view.utils.JordieeUtils
@@ -44,6 +45,11 @@ class NotificationActivity : AppCompatActivity() {
         setPeriodicNotification()
         binding.btnNotifications.setOnClickListener {
             JordieeUtils.displayNotification(this)
+        }
+
+        binding.btnNext.setOnClickListener {
+            val intent = Intent(this, NotesActivity::class.java)
+            startActivity(intent)
         }
 
         binding.sendPeriodicNotification.setOnClickListener {

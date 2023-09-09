@@ -24,7 +24,8 @@ abstract class NotesDatabase : RoomDatabase() {
             } ?: synchronized(this) {
                 val tempInstance =
                     Room.databaseBuilder(context, NotesDatabase::class.java, "jordieeDb")
-                        .addCallback(NotesDbCallBack(coroutineScope)).build()
+                        .addCallback(NotesDbCallBack(coroutineScope))
+                        .build()
                 instance = tempInstance
                 return tempInstance
             }

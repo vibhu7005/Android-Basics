@@ -48,8 +48,10 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
-    implementation 'androidx.core:core-ktx:+'
-    annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
+    implementation 'androidx.core:core-ktx:'
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    kapt "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0"
+//    implementation "androidx.room:room-coroutines:$rootProject.roomVersion"
 
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
