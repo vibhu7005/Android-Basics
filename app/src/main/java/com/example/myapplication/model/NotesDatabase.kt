@@ -10,7 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = [Note::class], version = 1)
+@Database(entities = [Note::class], version = 10)
 abstract class NotesDatabase : RoomDatabase() {
 
     abstract fun getNoteDao(): NotesDao
@@ -35,9 +35,16 @@ abstract class NotesDatabase : RoomDatabase() {
     private class NotesDbCallBack(val scope: CoroutineScope) : RoomDatabase.Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             scope.launch {
-                instance?.getNoteDao()?.insert(Note("work 1", "java collections"))
-                instance?.getNoteDao()?.insert(Note("work 2", "Take Medicine"))
-                instance?.getNoteDao()?.insert(Note("work 3", "Take a nap"))
+                val note1 = Note(title = "xyz", description = "abc")
+                val note2 = Note(title = "ui", description = "ko")
+                val note3 = Note(title = "ji", description = "oi")
+                val note4 = Note(title = "89", description = "lop")
+
+                instance?.getNoteDao()?.insert(note1)
+                instance?.getNoteDao()?.insert(note2)
+                instance?.getNoteDao()?.insert(note3)
+                instance?.getNoteDao()?.insert(note4)
+
             }
         }
     }

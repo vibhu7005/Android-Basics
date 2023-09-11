@@ -24,6 +24,8 @@ class NotesActivity : AppCompatActivity() {
         viewModel.myAllNotes.observe(this) {
             Log.d("vibhu", ""+it.size)
         }
+        val note = Note(title = "loox", description = "kook")
+        viewModel.insertNote(note)
     }
 
 
