@@ -6,4 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".view.notesapp.NotesActivity">
 
+    <Button
+        android:id="@+id/btn_add_Data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_data"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="addDataToDb"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
