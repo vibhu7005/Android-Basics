@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "320780866494",
+    "firebase_url": "https://koltindevbasics-default-rtdb.firebaseio.com",
+    "project_id": "koltindevbasics",
+    "storage_bucket": "koltindevbasics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320780866494:android:dd1b529b2f2431f818dfef",
+        "android_client_info": {
+          "package_name": "com.jordiee.kotlindev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEzNBlxNMjnmIg-Ba-VbZgUK2Vmpf0UFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

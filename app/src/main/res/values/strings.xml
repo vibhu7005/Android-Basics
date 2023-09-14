@@ -10,4 +10,6 @@
     <string name="add_data">Add Data</string>
     <string name="add_title">Add Title</string>
     <string name="add_description">Add description</string>
+    <string name="name">Name</string>
+    <string name="add">Add</string>
 </resources>

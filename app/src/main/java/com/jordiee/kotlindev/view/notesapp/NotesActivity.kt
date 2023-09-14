@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.jordiee.kotlindev.NotesApplication
 import com.jordiee.kotlindev.databinding.ActivityNotesBinding
 import com.jordiee.kotlindev.model.Note
+import com.jordiee.kotlindev.view.firebase.FirebaseActivity
 import com.jordiee.kotlindev.viewmodel.NotesViewModel
 import com.jordiee.kotlindev.viewmodel.NotesViewModelFactory
 
@@ -45,5 +46,10 @@ class NotesActivity : AppCompatActivity() {
                 description = resultData?.getStringExtra("description").toString())
             viewModel.insertNote(note)
         }
+    }
+
+    fun proceed(view: View) {
+        val intent = Intent(this, FirebaseActivity::class.java)
+        startActivity(intent)
     }
 }
