@@ -26,7 +26,6 @@ class NotesActivity : AppCompatActivity() {
         setContentView(binding.root)
         val viewModelFactory = NotesViewModelFactory((application as NotesApplication).notesRepo)
         viewModel = ViewModelProvider(this, viewModelFactory)[NotesViewModel::class.java]
-//        viewModel.insertNote(Note("hi", "hello"))
         viewModel.myAllNotes.observe(this) {
             Log.d("vibhu", ""+it.size)
         }
