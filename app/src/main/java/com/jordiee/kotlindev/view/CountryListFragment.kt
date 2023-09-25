@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jordiee.kotlindev.R
 import com.jordiee.kotlindev.databinding.FragmentListBinding
@@ -42,7 +42,7 @@ class CountryListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val countryList = listOf("Bangkok", "London", "Tokyo", "mapple", "Sydney", "Austin", "Russia", "Bolavia", "Libya", "Sudan", "Nigeria", "India", "Bhutan", "Nepal", "Australia", "Canada", "USA")
         val adapter = CountryListAdapter(countryList, requireContext())
-        binding.rvListCountries.layoutManager = GridLayoutManager( context, 2 ,RecyclerView.VERTICAL, false)
+        binding.rvListCountries.layoutManager = LinearLayoutManager( context, RecyclerView.VERTICAL, false)
         binding.rvListCountries.adapter = adapter
     }
 

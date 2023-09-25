@@ -72,6 +72,7 @@ dependencies {
     // UI
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation 'com.github.vipulasri:timelineview:1.1.5'
 
     // Testing
     testImplementation "junit:junit:$rootProject.junitVersion"

@@ -25,12 +25,14 @@ class FirebaseActivity : AppCompatActivity() {
 //        binding.rvUsers.layoutManager = LinearLayoutManager(this)
 //        binding.rvUsers.adapter =
         setContentView(binding.root)
-        retrieveData()
+//        retrieveData()
         binding.btAdd.setOnClickListener { addUserToDatabase() }
     }
     private fun addUserToDatabase() {
         val id = databaseReference.push().key.toString()
         val user = Users(id, binding.etName.text.toString(), binding.etEmail.text.toString())
+        databaseReference.child("monkey").setValue("loop")
+        databaseReference.child("monkey").setValue("lock")
        databaseReference.child(id).setValue(user).addOnCompleteListener {
            if (it.isSuccessful) {
                Toast.makeText(this, "added", Toast.LENGTH_SHORT).show()
