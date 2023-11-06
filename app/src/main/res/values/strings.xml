@@ -13,4 +13,7 @@
     <string name="name">Name</string>
     <string name="add">Add</string>
     <string name="sign_out">sign out</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="signup">SignUp</string>
+    <string name="login">Login</string>
 </resources>

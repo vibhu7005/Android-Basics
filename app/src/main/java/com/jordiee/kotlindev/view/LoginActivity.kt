@@ -1,9 +1,12 @@
 package com.jordiee.kotlindev.view
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -25,6 +28,10 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             signInUser()
         }
+
+        binding.btnForgotPassword.setOnClickListener {
+            resetPasswordOnFirebase()
+        }
     }
 
     override fun onStart() {
@@ -33,6 +40,24 @@ class LoginActivity : AppCompatActivity() {
         if (user != null) {
             startMainActivity()
         }
+    }
+
+    private fun resetPasswordOnFirebase() {
+        val inputEditText = EditText(this);
+        AlertDialog.Builder(this)
+            .setTitle("Enter Email")
+            .setPositiveButton("ok", object : DialogInterface.OnClickListener {
+                override fun onClick(p0: DialogInterface?, p1: Int) {
+                    auth.sendPasswordResetEmail(inputEditText.text.toString()).addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            Toast.makeText(this@LoginActivity, "Reset link sent", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            })
+            .setView(inputEditText)
+            .create()
+            .show()
     }
 
     private fun signUpWithFirebase() {
