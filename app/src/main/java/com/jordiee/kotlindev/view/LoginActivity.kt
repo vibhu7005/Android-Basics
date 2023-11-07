@@ -32,6 +32,15 @@ class LoginActivity : AppCompatActivity() {
         binding.btnForgotPassword.setOnClickListener {
             resetPasswordOnFirebase()
         }
+
+        binding.btnOtpLogin.setOnClickListener {
+            openOtpLoginFlow()
+        }
+    }
+
+    private fun openOtpLoginFlow() {
+        val intent = Intent(this, OtpLoginActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onStart() {
@@ -46,15 +55,14 @@ class LoginActivity : AppCompatActivity() {
         val inputEditText = EditText(this);
         AlertDialog.Builder(this)
             .setTitle("Enter Email")
-            .setPositiveButton("ok", object : DialogInterface.OnClickListener {
-                override fun onClick(p0: DialogInterface?, p1: Int) {
-                    auth.sendPasswordResetEmail(inputEditText.text.toString()).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            Toast.makeText(this@LoginActivity, "Reset link sent", Toast.LENGTH_SHORT).show()
-                        }
+            .setPositiveButton("ok") { _, _ ->
+                auth.sendPasswordResetEmail(inputEditText.text.toString()).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        Toast.makeText(this@LoginActivity, "Reset link sent", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
-            })
+            }
             .setView(inputEditText)
             .create()
             .show()

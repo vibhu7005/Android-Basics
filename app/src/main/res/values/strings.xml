@@ -16,4 +16,8 @@
     <string name="forgot_password">Forgot password</string>
     <string name="signup">SignUp</string>
     <string name="login">Login</string>
+    <string name="enter_phone_number">Enter Phone number</string>
+    <string name="enter_otp">Enter otp</string>
+    <string name="verify">Verify</string>
+    <string name="send_otp">Send OTP</string>
 </resources>
