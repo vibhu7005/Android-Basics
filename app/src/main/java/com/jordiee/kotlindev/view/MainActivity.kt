@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-//        val intent = Intent(this, SecondActivity::class.java)
-//        startActivity(intent)
+        val intent = Intent(this, SecondActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

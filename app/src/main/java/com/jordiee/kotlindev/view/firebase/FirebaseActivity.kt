@@ -1,5 +1,6 @@
 package com.jordiee.kotlindev.view.firebase
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,10 @@ class FirebaseActivity : AppCompatActivity() {
         binding = ActivityFirebaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btAdd.setOnClickListener { addUserToDatabase() }
+        binding.btUploadFirebase.setOnClickListener {
+            val intent = Intent(this, DataUploadActivity::class.java)
+            startActivity(intent)
+        }
         updateData()
         fetchUsersData()
         removeData()
