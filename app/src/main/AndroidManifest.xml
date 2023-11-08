@@ -52,6 +52,12 @@
 
         <service android:name=".view.Services.BackgroundService" />
         <service android:name=".view.Services.ForegroundService" />
+        <service android:name=".view.Services.JordieeFirebaseMessagingService"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+        </service>
 
         <receiver
             android:name=".view.broadcastReceiver.JordieeBroadcastReceiver"
