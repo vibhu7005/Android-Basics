@@ -13,6 +13,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.getValue
 
 import com.jordiee.kotlindev.databinding.ActivityFirebaseBinding
+import com.jordiee.kotlindev.view.ScopedStorageActivity
 import com.jordiee.kotlindev.view.firebase.data.Users
 
 class FirebaseActivity : AppCompatActivity() {
@@ -27,6 +28,10 @@ class FirebaseActivity : AppCompatActivity() {
         binding.btAdd.setOnClickListener { addUserToDatabase() }
         binding.btUploadFirebase.setOnClickListener {
             val intent = Intent(this, DataUploadActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btNext.setOnClickListener {
+            val intent = Intent(this, ScopedStorageActivity::class.java)
             startActivity(intent)
         }
         updateData()
