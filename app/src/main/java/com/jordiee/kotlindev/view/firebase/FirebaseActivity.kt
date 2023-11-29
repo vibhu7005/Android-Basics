@@ -14,6 +14,7 @@ import com.google.firebase.database.ktx.getValue
 
 import com.jordiee.kotlindev.databinding.ActivityFirebaseBinding
 import com.jordiee.kotlindev.view.ScopedStorageActivity
+import com.jordiee.kotlindev.view.WorkManagerActivity
 import com.jordiee.kotlindev.view.firebase.data.Users
 
 class FirebaseActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class FirebaseActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.btNext.setOnClickListener {
-            val intent = Intent(this, ScopedStorageActivity::class.java)
+            val intent = Intent(this, WorkManagerActivity::class.java)
             startActivity(intent)
         }
         updateData()
