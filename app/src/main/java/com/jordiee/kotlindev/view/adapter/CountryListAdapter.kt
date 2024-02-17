@@ -57,7 +57,7 @@ class CountryListAdapter(private val countryList : List<String>, private val con
     }
 
     override fun getItemCount(): Int {
-        Log.d(TAG, "onItemCount")
+//        Log.d(TAG, "onItemCount")
         return countryList.size
     }
 

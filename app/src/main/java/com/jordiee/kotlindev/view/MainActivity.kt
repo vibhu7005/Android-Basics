@@ -23,14 +23,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
-//        val listFragment = CountryListFragment.newInstance()
-//        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment, "listFragment").addToBackStack("listFragment").commit()
+        val listFragment = CountryListFragment.newInstance()
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment, "listFragment").addToBackStack("listFragment").commit()
     }
 
     override fun onResume() {
         super.onResume()
-        val intent = Intent(this, SecondActivity::class.java)
-        startActivity(intent)
+//        val intent = Intent(this, SecondActivity::class.java)
+//        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

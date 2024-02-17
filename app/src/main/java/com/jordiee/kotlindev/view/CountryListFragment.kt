@@ -48,7 +48,7 @@ class CountryListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val listFragment2 = WebViewFragment.newInstance()
-        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment2, "Frag2").commit()
+//        val listFragment2 = WebViewFragment.newInstance()
+//        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragment_container, listFragment2, "Frag2").commit()
     }
 }
